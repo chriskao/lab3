@@ -27,13 +27,19 @@ function projectClick(e) { 
     e.preventDefault();
     // In an event handler, $(this) refers to      
     // the object that triggered the event      
-    $(this).css("background-color", "#7fff00");
+    $(this).css("background-color", "#FFFFCC");
     var containingProject = $(this).closest(".project"); 
     var description = $(containingProject).find(".project-description");
     if (description.length == 0) { 
-       $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>"); 
+       $(containingProject).append("<div class='project-description'><p>This is an awesome project!</p></div>"); 
     } else { 
-       description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+       //description.html("<p>Stop clicking on me! You just did it at " + (new Date()) + "</p>");
+       if( description.is(":visible") == true ){  
+			description.fadeOut();
+			$(this).css("background-color", "#FFFFFF");
+	   } else {
+	   		description.fadeIn();
+	   }
     }
 }
 

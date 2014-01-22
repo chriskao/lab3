@@ -44,3 +44,8 @@ body {
 .jumbotron p.active {
      color: #1f6ddd;
 }
+
+.project-description {
+     text-align: center;
+     font-size: 30px;
+}
